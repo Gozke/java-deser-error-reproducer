@@ -3,9 +3,9 @@
 ## What is this?
 This is a simple maven project that illustrates that a certain object graph cannot be deserialized with 8 < JDK version.
 
-I constructs the graph, serializes it to a file then immediately tries to read it back.
+It constructs the graph, serializes it to a file then immediately tries to read it back.
 
-Note: This is a stripped down part of a large enterprise application's code base. Javadoc was stripped off and class names may no longer match the original.
+Note: This is a stripped down part of a large enterprise application's code base. Javadoc was stripped off and class names may no longer match the original ones.
 
 ## How to run in?
 Set JAVA_HOME to the location of the JDK you want to use and run `mvn clean test`.
