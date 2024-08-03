@@ -21,10 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: maven-settings-action
-      uses: s4u/maven-settings-action@v3.0.0
-      with:
-        proxies: '[{"id": "proxyId", "active": "isActive", "protocol": "http", "host": "proxy.lsy.bud.dlh.de", "port": "3128", "nonProxyHosts": "localhost|127.0.0.1|*.dlh.de"}]'
     - name: Build with Maven
       run: mvn -X -B package --file pom.xml
 
