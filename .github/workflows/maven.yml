@@ -21,18 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '8'
-        distribution: 'temurin'
-        cache: maven
     - name: maven-settings-action
       uses: s4u/maven-settings-action@v3.0.0
       with:
         proxies: '[{"id": "proxyId", "active": "isActive", "protocol": "http", "host": "proxy.lsy.bud.dlh.de", "port": "3128", "nonProxyHosts": "localhost|127.0.0.1|*.dlh.de"}]'
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -X -B package --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
